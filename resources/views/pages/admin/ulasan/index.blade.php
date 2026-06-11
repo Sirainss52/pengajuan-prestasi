@@ -33,7 +33,7 @@
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped mb-0">
-                                    <caption>
+                                    <caption class="px-2">
                                         Jumlah Ulasan {{ number_format($ulasan->count(), 0, ',', '.') }}
                                     </caption>
                                     <tr>

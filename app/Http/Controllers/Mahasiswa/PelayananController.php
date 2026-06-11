@@ -23,7 +23,7 @@ class PelayananController extends Controller
                 foreach ($kriteria as $kri) {
                     $bobot = $kri
                         ->evaluasi()
-                        ->orderByRaw('CAST(evaluasi.nilai AS INT) ' . ($kri->atribut == 'benefit' ? 'DESC' : 'ASC'))
+                        ->orderByRaw('CAST(nilai AS UNSIGNED) ' . ($kri->atribut == 'benefit' ? 'DESC' : 'ASC'))
                         ->value('evaluasi.nilai');
 
                     $matrikX = $alt
@@ -58,9 +58,7 @@ class PelayananController extends Controller
             $preferensi = $preferensi->sortByDesc('poin');
             return view('pages.mahasiswa.pelayanan.index', compact('preferensi'));
         } catch (\Throwable $th) {
-            return redirect()
-                ->route('mhs.home')
-                ->withError('Maaf kami tidak dapat mengarahkan anda ke halaman ini, silahkan coba lagi nanti.');
+            dd($th);
         }
     }
 

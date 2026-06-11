@@ -6,7 +6,7 @@
                 @php
                     $bobot = $kri
                         ->evaluasi()
-                        ->orderByRaw('CAST(evaluasi.nilai AS INT) ' . ($kri->atribut == 'benefit' ? 'DESC' : 'ASC'))
+                        ->orderByRaw('CAST(nilai AS UNSIGNED) ' . ($kri->atribut == 'benefit' ? 'DESC' : 'ASC'))
                         ->value('evaluasi.nilai');
 
                     $matrikX = $alt

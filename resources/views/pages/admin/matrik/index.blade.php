@@ -63,7 +63,7 @@
                             </button>
                             <div class="table-responsive">
                                 <table class="table table-striped mb-0">
-                                    <caption>
+                                    <caption class="px-2">
                                         Matrik Keputusan(X)
                                     </caption>
                                     <tr>
@@ -83,7 +83,7 @@
                                 </table>
 
                                 <table class="table table-striped mb-0">
-                                    <caption>
+                                    <caption class="px-2">
                                         Matrik Ternormalisasi (R)
                                     </caption>
                                     <tr>

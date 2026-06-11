@@ -63,7 +63,7 @@
                             <hr>
                             <div class="table-responsive">
                                 <table class="table table-striped mb-0">
-                                    <caption>
+                                    <caption class="px-2">
                                         Tabel Alternatif A<sub>i</sub>
                                     </caption>
                                     <thead>

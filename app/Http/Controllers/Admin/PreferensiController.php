@@ -22,7 +22,7 @@ class PreferensiController extends Controller
                 foreach ($kriteria as $kri) {
                     $bobot = $kri
                         ->evaluasi()
-                        ->orderByRaw('CAST(evaluasi.nilai AS INT) ' . ($kri->atribut == 'benefit' ? 'DESC' : 'ASC'))
+                        ->orderByRaw('CAST(nilai AS UNSIGNED) ' . ($kri->atribut == 'benefit' ? 'DESC' : 'ASC'))
                         ->value('evaluasi.nilai');
 
                     $matrikX = $alt
@@ -42,9 +42,7 @@ class PreferensiController extends Controller
             $preferensi = $preferensi->sortByDesc('result');
             return view('pages.admin.preferensi.index', compact('preferensi'));
         } catch (\Throwable $th) {
-            return redirect()
-                ->route('admin.home')
-                ->withError('Maaf kami tidak dapat mengarahkan anda ke halaman ini, silahkan coba lagi nanti.');
+            dd($th->getMessage());
         }
     }
 }
